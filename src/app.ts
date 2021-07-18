@@ -24,6 +24,7 @@ class App {
         this.app.use(cors());
     }
 
+    // add this only if you have routes
     private setHeaders() {
         this.app.use((req: Request, res: Response, next: NextFunction) => {
             res.setHeader('Access-Control-Allow-Origin', '*');
@@ -46,7 +47,7 @@ class App {
         });
 
         await apolloServer.start();
-        apolloServer.applyMiddleware({ app: this.app, cors: false });
+        apolloServer.applyMiddleware({ app: this.app, cors: false, path: '/endpoint' });
     }
 
 }
