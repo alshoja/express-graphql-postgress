@@ -47,7 +47,7 @@ class App {
         });
 
         await apolloServer.start();
-        apolloServer.applyMiddleware({ app: this.app, cors: false, path: '/endpoint' });
+        apolloServer.applyMiddleware({ app: this.app, cors: false, path: '/' });
     }
 
 }
