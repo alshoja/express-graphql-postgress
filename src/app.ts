@@ -45,6 +45,7 @@ class App {
             context: ({ req, res }) => ({ req, res })
         });
 
+        await apolloServer.start();
         apolloServer.applyMiddleware({ app: this.app, cors: false });
     }
 
